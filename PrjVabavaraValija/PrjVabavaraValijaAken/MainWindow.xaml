@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Label x:Name="lblOS" Content="OS:" HorizontalAlignment="Left" Margin="60,49,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblOSName" Content="Label" HorizontalAlignment="Left" Margin="114,49,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

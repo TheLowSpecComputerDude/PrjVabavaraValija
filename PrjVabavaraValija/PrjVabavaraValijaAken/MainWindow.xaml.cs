@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using PrjRiistvara;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,9 @@ namespace PrjVabavaraValijaAken
         public MainWindow()
         {
             InitializeComponent();
+
+            IRiistvara riistvara = new Riistvara();
+            lblOSName.Content = riistvara.OSVersion.ToString();
         }
     }
 }
