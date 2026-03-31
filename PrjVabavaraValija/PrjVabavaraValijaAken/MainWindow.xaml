@@ -9,6 +9,16 @@
     <Grid>
         <Label x:Name="lblOS" Content="OS:" HorizontalAlignment="Left" Margin="60,49,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblOSName" Content="Label" HorizontalAlignment="Left" Margin="114,49,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblRAM" Content="RAM:" HorizontalAlignment="Left" Margin="55,80,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.035,-0.127"/>
+        <Label x:Name="lblRAMAmount" Content="Label" HorizontalAlignment="Left" Margin="114,80,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCPU" Content="CPU:" HorizontalAlignment="Left" Margin="57,111,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCPUName" Content="Label" HorizontalAlignment="Left" Margin="114,111,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblParimKetas" Content="Parim ketas:" HorizontalAlignment="Left" Margin="19,142,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDriveName" Content="Label" HorizontalAlignment="Left" Margin="114,142,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblMaht" Content="Maht:" HorizontalAlignment="Left" Margin="54,173,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDriveSize" Content="Label" HorizontalAlignment="Left" Margin="114,173,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblGPU" Content="GPU:" HorizontalAlignment="Left" Margin="56,0,0,0" VerticalAlignment="Center"/>
+        <Label x:Name="lblGPUName" Content="Label" HorizontalAlignment="Left" Margin="114,0,0,0" VerticalAlignment="Center"/>
 
     </Grid>
 </Window>

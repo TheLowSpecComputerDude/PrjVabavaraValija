@@ -23,6 +23,11 @@ namespace PrjVabavaraValijaAken
 
             IRiistvara riistvara = new Riistvara();
             lblOSName.Content = riistvara.OSVersion.ToString();
+            lblRAMAmount.Content = riistvara.RAM.ToString("F1");
+            lblCPUName.Content = riistvara.CPU.ToString();
+            lblDriveSize.Content = riistvara.FreeSpace.ToString("F2");
+            lblDriveName.Content = riistvara.Drive.ToString();
+            lblGPUName.Content = riistvara.GPU.ToString();
         }
     }
 }
