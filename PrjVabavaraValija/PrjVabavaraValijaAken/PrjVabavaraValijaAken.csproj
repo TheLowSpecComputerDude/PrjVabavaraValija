@@ -9,10 +9,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="tarkvara.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="tarkvara.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Management" Version="10.0.5" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PrjAndmebaas\PrjAndmebaas.csproj" />
     <ProjectReference Include="..\PrjRiistvara\PrjRiistvara.csproj" />
   </ItemGroup>
 

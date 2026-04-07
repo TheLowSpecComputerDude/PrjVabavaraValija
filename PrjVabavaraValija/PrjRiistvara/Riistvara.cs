@@ -8,19 +8,20 @@ namespace PrjRiistvara
     public class Riistvara : IRiistvara
     {
         // Klassisisesed muutujad propertyle andmiseks
-        private int _osVersion; // OS versioon 7 - 11
+        private double _osVersion; // OS versioon 7 - 11
 
         private double _ram; // Ram GB ühe komakohaga
 
         private string _cpuName = string.Empty; // CPU nimi, kuvamiseks
 
-        private string _gpuName = string.Empty;
+        private string _gpuName = string.Empty; // GPU nimi, kuvamiseks
 
-        private double _freeSpace;
-        private string _bestDrive = string.Empty;
+        private double _freeSpace; // Vaba ketta ruum 
+
+        private string _bestDrive = string.Empty; // Ketas millel on kõige rohkem ruumi
 
         // Propertyd andmete välja saatmiseks
-        public int OSVersion { get => _osVersion; }
+        public double OSVersion { get => _osVersion; }
         public double RAM { get => _ram; }
         public string CPU { get => _cpuName; }
         public double FreeSpace { get => _freeSpace; }
@@ -53,7 +54,7 @@ namespace PrjRiistvara
                 {
                     1 => 7,
                     2 => 8,
-                    3 => 81,
+                    3 => 8.1,
                     _ => 0
                 };
             }
@@ -75,7 +76,7 @@ namespace PrjRiistvara
                 // Leiab RAM-i kilobaitides
                 ulong memoryKB = (ulong)result["TotalVisibleMemorySize"];
                 // Arvutame kilobaidid gigabaitideks ning tagastame väärtuse meetodist välja
-                _ram = memoryKB / 1024.0 / 1024.0;
+                _ram = memoryKB / 1024.000 / 1024.000;
             }
         }
 
@@ -116,7 +117,6 @@ namespace PrjRiistvara
             // Loome query GPU nime küsimiseks
             var searcher = new ManagementObjectSearcher("SELECT Name, AdapterRAM FROM Win32_VideoController");
 
-            int i = 0;
             // Käivitame query ja saame vastused
             foreach (var result in searcher.Get())
             {

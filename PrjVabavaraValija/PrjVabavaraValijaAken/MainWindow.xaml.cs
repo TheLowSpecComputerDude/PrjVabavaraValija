@@ -1,4 +1,5 @@
-﻿using PrjRiistvara;
+﻿using PrjAndmebaas;
+using PrjRiistvara;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,14 +21,26 @@ namespace PrjVabavaraValijaAken
         public MainWindow()
         {
             InitializeComponent();
-
             IRiistvara riistvara = new Riistvara();
+            
+
+            
             lblOSName.Content = riistvara.OSVersion.ToString();
-            lblRAMAmount.Content = riistvara.RAM.ToString("F1");
+            lblRAMAmount.Content = riistvara.RAM.ToString("F3");
             lblCPUName.Content = riistvara.CPU.ToString();
             lblDriveSize.Content = riistvara.FreeSpace.ToString("F2");
             lblDriveName.Content = riistvara.Drive.ToString();
             lblGPUName.Content = riistvara.GPU.ToString();
+
+            ILoeAndmed tarkvarad = new LoeAndmed();
+            List<Tarkvaranõuded> sobivad = tarkvarad.LeiaSobivadTarkvarad(riistvara);
+
+            foreach (Tarkvaranõuded sobivtarkvara in sobivad)
+            {
+                lbxSobivadTarkvarad.Items.Add(sobivtarkvara.Nimi);
+            }
+
+
         }
     }
 }

@@ -8,7 +8,7 @@ namespace PrjRiistvara
 {
     public interface IRiistvara
     {
-        public int OSVersion { get;}
+        public double OSVersion { get;}
         public double RAM { get; }
         public string CPU { get; }
         public double FreeSpace { get; }

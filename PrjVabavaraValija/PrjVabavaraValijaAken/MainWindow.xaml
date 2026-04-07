@@ -19,6 +19,11 @@
         <Label x:Name="lblDriveSize" Content="Label" HorizontalAlignment="Left" Margin="114,173,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblGPU" Content="GPU:" HorizontalAlignment="Left" Margin="56,0,0,0" VerticalAlignment="Center"/>
         <Label x:Name="lblGPUName" Content="Label" HorizontalAlignment="Left" Margin="114,0,0,0" VerticalAlignment="Center"/>
+        <ListBox x:Name="lbxSobivadTarkvarad" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="537,32,10,101"/>
+        <Button x:Name="btnKontoritarkvara" Content="Kontoritarkvara" HorizontalAlignment="Left" Margin="301,83,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnKommunikatsioon" Content="Kommunikatsiooni tarkvara" HorizontalAlignment="Left" Margin="301,140,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnVeebibrauser" Content="Veebibrauser" HorizontalAlignment="Left" Margin="301,111,0,0" VerticalAlignment="Top" Width="85"/>
+        <Button x:Name="btnFailihaldus" Content="Failihaldustarkvara" HorizontalAlignment="Left" Margin="301,168,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
