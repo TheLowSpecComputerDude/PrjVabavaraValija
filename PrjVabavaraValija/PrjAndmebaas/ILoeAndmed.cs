@@ -9,6 +9,10 @@ namespace PrjAndmebaas
 {
     public interface ILoeAndmed
     {
-        List<Tarkvaranõuded> LeiaSobivadTarkvarad(IRiistvara riistvara);
+        List<Tarkvaranõuded> LeiaSobivadTarkvarad(IRiistvara riistvara, int kategooriaId);
+
+        List<Kriteeriumid> LoeKriteeriumidKategooriaJargi(int kategooriaId);
+
+        List<int> LoeTarkvaraKriteeriumid(int tarkvaraId);
     }
 }

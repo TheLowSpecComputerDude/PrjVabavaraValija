@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PrjAndmebaas\PrjAndmebaas.csproj" />
+    <ProjectReference Include="..\PrjHindamine\PrjHindamine.csproj" />
     <ProjectReference Include="..\PrjRiistvara\PrjRiistvara.csproj" />
   </ItemGroup>
 

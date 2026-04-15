@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrjRiistvara", "PrjRiistvar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrjAndmebaas", "PrjAndmebaas\PrjAndmebaas.csproj", "{63C5156C-2FCA-4218-B250-132935B9DE2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrjHindamine", "PrjHindamine\PrjHindamine.csproj", "{2F94E5BF-75D1-4DD3-86C8-3A7A5A191F2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{63C5156C-2FCA-4218-B250-132935B9DE2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63C5156C-2FCA-4218-B250-132935B9DE2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63C5156C-2FCA-4218-B250-132935B9DE2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F94E5BF-75D1-4DD3-86C8-3A7A5A191F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F94E5BF-75D1-4DD3-86C8-3A7A5A191F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F94E5BF-75D1-4DD3-86C8-3A7A5A191F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F94E5BF-75D1-4DD3-86C8-3A7A5A191F2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

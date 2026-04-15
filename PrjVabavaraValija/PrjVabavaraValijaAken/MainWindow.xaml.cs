@@ -33,14 +33,38 @@ namespace PrjVabavaraValijaAken
             lblGPUName.Content = riistvara.GPU.ToString();
 
             ILoeAndmed tarkvarad = new LoeAndmed();
-            List<Tarkvaranõuded> sobivad = tarkvarad.LeiaSobivadTarkvarad(riistvara);
+            //List<Tarkvaranõuded> sobivad = tarkvarad.LeiaSobivadTarkvarad(riistvara);
 
-            foreach (Tarkvaranõuded sobivtarkvara in sobivad)
-            {
-                lbxSobivadTarkvarad.Items.Add(sobivtarkvara.Nimi);
-            }
+           // foreach (Tarkvaranõuded sobivtarkvara in sobivad)
+            //{
+               // lbxSobivadTarkvarad.Items.Add(sobivtarkvara.Nimi);
+           // }
 
 
+        }
+
+        private void btnKontoritarkvara_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 aken = new Window1(1);
+            aken.ShowDialog();
+        }
+
+        private void btnVeebibrauser_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 aken = new Window1(2);
+            aken.ShowDialog();
+        }
+
+        private void btnKommunikatsioon_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 aken = new Window1(3);
+            aken.ShowDialog();
+        }
+
+        private void btnFailihaldus_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 aken = new Window1(4);
+            aken.ShowDialog();
         }
     }
 }
