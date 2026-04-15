@@ -1,4 +1,4 @@
-﻿using PrjRiistvara;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ namespace PrjAndmebaas
 {
     public interface ILoeAndmed
     {
-        List<Tarkvaranõuded> LeiaSobivadTarkvarad(IRiistvara riistvara, int kategooriaId);
+        List<Tarkvaranõuded> LeiaSobivadTarkvarad(double osVersion, double ram, double freeSpace, int kategooriaId);
 
         List<Kriteeriumid> LoeKriteeriumidKategooriaJargi(int kategooriaId);
 

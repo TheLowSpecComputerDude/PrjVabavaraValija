@@ -72,7 +72,7 @@ namespace PrjVabavaraValijaAken
         {
             List<int> valitudKriteeriumid = LoeValitudKriteeriumid();
 
-            List<Tarkvaranõuded> sobivadTarkvarad = _andmed.LeiaSobivadTarkvarad(_riistvara, _kategooriaId);
+            List<Tarkvaranõuded> sobivadTarkvarad = _andmed.LeiaSobivadTarkvarad(_riistvara.OSVersion, _riistvara.RAM, _riistvara.FreeSpace, _kategooriaId);
 
             if(sobivadTarkvarad.Count == 0)
             {

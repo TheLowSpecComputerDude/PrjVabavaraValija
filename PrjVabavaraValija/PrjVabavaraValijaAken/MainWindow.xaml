@@ -24,6 +24,5 @@
         <Button x:Name="btnKommunikatsioon" Content="Kommunikatsiooni tarkvara" HorizontalAlignment="Left" Margin="301,140,0,0" VerticalAlignment="Top" Click="btnKommunikatsioon_Click"/>
         <Button x:Name="btnVeebibrauser" Content="Veebibrauser" HorizontalAlignment="Left" Margin="301,111,0,0" VerticalAlignment="Top" Width="85" Click="btnVeebibrauser_Click"/>
         <Button x:Name="btnFailihaldus" Content="Failihaldustarkvara" HorizontalAlignment="Left" Margin="301,168,0,0" VerticalAlignment="Top" Click="btnFailihaldus_Click"/>
-
     </Grid>
 </Window>

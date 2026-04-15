@@ -18,19 +18,17 @@ namespace PrjVabavaraValijaAken
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly IRiistvara _riistvara;
+
         public MainWindow()
         {
             InitializeComponent();
-            IRiistvara riistvara = new Riistvara();
+            _riistvara = new Riistvara();
             
-
-            
-            lblOSName.Content = riistvara.OSVersion.ToString();
-            lblRAMAmount.Content = riistvara.RAM.ToString("F3");
-            lblCPUName.Content = riistvara.CPU.ToString();
-            lblDriveSize.Content = riistvara.FreeSpace.ToString("F2");
-            lblDriveName.Content = riistvara.Drive.ToString();
-            lblGPUName.Content = riistvara.GPU.ToString();
+            lblOSName.Content = _riistvara.OSVersion.ToString();
+            lblRAMAmount.Content = _riistvara.RAM.ToString("F3");
+            lblDriveSize.Content = _riistvara.FreeSpace.ToString("F2");
+            lblDriveName.Content = _riistvara.Drive.ToString();
 
             ILoeAndmed tarkvarad = new LoeAndmed();
             //List<Tarkvaranõuded> sobivad = tarkvarad.LeiaSobivadTarkvarad(riistvara);

@@ -12,31 +12,22 @@ namespace PrjRiistvara
 
         private double _ram; // Ram GB ühe komakohaga
 
-        private string _cpuName = string.Empty; // CPU nimi, kuvamiseks
-
-        private string _gpuName = string.Empty; // GPU nimi, kuvamiseks
-
         private double _freeSpace; // Vaba ketta ruum 
 
         private string _bestDrive = string.Empty; // Ketas millel on kõige rohkem ruumi
 
         // Propertyd andmete välja saatmiseks
-        public double OSVersion { get => _osVersion; }
-        public double RAM { get => _ram; }
-        public string CPU { get => _cpuName; }
-        public double FreeSpace { get => _freeSpace; }
-        public string Drive { get => _bestDrive; }
-        public string GPU { get => _gpuName; }
-
+        double IRiistvara.OSVersion { get => _osVersion; }
+        double IRiistvara.RAM { get => _ram; }
+        double IRiistvara.FreeSpace { get => _freeSpace; }
+        string IRiistvara.Drive { get => _bestDrive; }
 
         // Konstruktor
         public Riistvara()
         {
             OSInformatsioon();
             RAMInformatsioon();
-            CPUInformatsioon();
             KettaInformatsioon();
-            GPUInformatsioon();
         }
 
         // Meetod Windowsi 7-11 leidmiseks
@@ -80,20 +71,6 @@ namespace PrjRiistvara
             }
         }
 
-        // Meetod Windowsi CPU nime leidmine läbi API
-        private void CPUInformatsioon()
-        {
-            // Loome query CPU nime küsimiseks
-            var searcher = new ManagementObjectSearcher("SELECT Name FROM Win32_Processor");
-
-            // Käivitame query ja saame vastused
-            foreach (var result in searcher.Get())
-            {
-                // Tagastame CPU nime meetodist välja
-                _cpuName = result["Name"].ToString();
-            }
-        }
-
         private void KettaInformatsioon()
         {
             foreach (DriveInfo drive in DriveInfo.GetDrives())
@@ -107,24 +84,6 @@ namespace PrjRiistvara
                         _freeSpace = freeGB;
                         _bestDrive = drive.Name;
                     }
-                }
-            }
-        }
-
-        private void GPUInformatsioon()
-        {
-            ulong maxVRAM = 0;
-            // Loome query GPU nime küsimiseks
-            var searcher = new ManagementObjectSearcher("SELECT Name, AdapterRAM FROM Win32_VideoController");
-
-            // Käivitame query ja saame vastused
-            foreach (var result in searcher.Get())
-            {
-                ulong vram = Convert.ToUInt64(result["AdapterRAM"]);
-                if (vram > maxVRAM)
-                {
-                    maxVRAM = vram;
-                    _gpuName = result["Name"].ToString();
                 }
             }
         }

@@ -13,6 +13,5 @@ namespace PrjHindamine
         public int Skoor { get; set; }
         public int MaxSkoor { get; set; }
 
-
     }
 }

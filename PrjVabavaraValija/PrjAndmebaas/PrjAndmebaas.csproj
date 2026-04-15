@@ -10,8 +10,4 @@
     <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.5" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\PrjRiistvara\PrjRiistvara.csproj" />
-  </ItemGroup>
-
 </Project>

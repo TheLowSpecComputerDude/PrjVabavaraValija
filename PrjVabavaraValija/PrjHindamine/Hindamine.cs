@@ -4,7 +4,7 @@ namespace PrjHindamine
 {
     public class Hindamine : IHindamine
     {
-        public List<Skoorid> HindaTarkvarad(List<Tarkvaranõuded> sobivadTarkvarad, List<int> valitudKriteeriumid, ILoeAndmed andmed)
+        List<Skoorid> IHindamine.HindaTarkvarad(List<Tarkvaranõuded> sobivadTarkvarad, List<int> valitudKriteeriumid, ILoeAndmed andmed)
         {
             List<Skoorid> tulemused = new List<Skoorid>();
 

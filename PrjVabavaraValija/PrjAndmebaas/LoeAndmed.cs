@@ -1,5 +1,4 @@
 ﻿using Microsoft.Data.Sqlite;
-using PrjRiistvara;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +16,7 @@ namespace PrjAndmebaas
             _database = new Andmebaas();
         }
 
-        public List<Tarkvaranõuded> LeiaSobivadTarkvarad(IRiistvara riistvara, int kategooriaId)
+        List<Tarkvaranõuded> ILoeAndmed.LeiaSobivadTarkvarad(double osVersion, double ram, double freeSpace, int kategooriaId)
         {
             List<Tarkvaranõuded> nõuded = new List<Tarkvaranõuded>();
 
@@ -35,9 +34,9 @@ namespace PrjAndmebaas
 
             using SqliteCommand cmd = new SqliteCommand(query, connection);
             cmd.Parameters.AddWithValue("@kategooriaId", kategooriaId);
-            cmd.Parameters.AddWithValue("@os", riistvara.OSVersion);
-            cmd.Parameters.AddWithValue("@ram", riistvara.RAM);
-            cmd.Parameters.AddWithValue("@disk", riistvara.FreeSpace);
+            cmd.Parameters.AddWithValue("@os", osVersion);
+            cmd.Parameters.AddWithValue("@ram", ram);
+            cmd.Parameters.AddWithValue("@disk", freeSpace);
             using SqliteDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
@@ -56,7 +55,7 @@ namespace PrjAndmebaas
             return nõuded;
         }
 
-        public List<Kriteeriumid> LoeKriteeriumidKategooriaJargi(int kategooriaId)
+        List<Kriteeriumid> ILoeAndmed.LoeKriteeriumidKategooriaJargi(int kategooriaId)
         {
             List<Kriteeriumid> kriteeriumid = new List<Kriteeriumid>();
 
@@ -89,7 +88,7 @@ namespace PrjAndmebaas
             return kriteeriumid;
         }
 
-        public List<int> LoeTarkvaraKriteeriumid(int tarkvaraId)
+        List<int> ILoeAndmed.LoeTarkvaraKriteeriumid(int tarkvaraId)
         {
             List<int> kriteeriumid = new List<int>();
 
