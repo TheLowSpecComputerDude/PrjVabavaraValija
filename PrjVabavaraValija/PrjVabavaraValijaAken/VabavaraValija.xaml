@@ -1,0 +1,393 @@
+﻿<Window x:Class="PrjVabavaraValijaAken.VabavaraValija"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrjVabavaraValijaAken"
+        mc:Ignorable="d"
+        Title="VabavaraValija" Height="450" Width="800">
+    <Grid>
+        <Grid x:Name="grdMainMenu" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Margin="10">
+
+                <Button x:Name="btnLitsentsEng"
+                        Content="License"
+                        Width="110"
+                        Height="30"
+                        Margin="0,0,10,0"
+                        Click="BtnLitsentsEng_Click"/>
+
+                <Button x:Name="btnLitsentsEe"
+                        Content="Litsents"
+                        Width="110"
+                        Height="30"
+                        Click="BtnLitsentsEe_Click"/>
+
+            </StackPanel>
+            
+            <TextBlock Grid.Row="1"
+                       Text="Vabavara valija"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,20,0,10"/>
+
+            <TextBlock Grid.Row="2"
+                       Text="Rakendus, mis aitab leida sinu arvutile sobivat vabavara!"
+                       FontSize="16"
+                       TextAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Margin="20,0,20,20"/>
+
+            <StackPanel Grid.Row="3"
+                        HorizontalAlignment="Center">
+                <Button x:Name="btnAlusta"
+                        Content="Alusta"
+                        Width="200"
+                        Height="45"
+                        Margin="0,0,0,10"
+                        Click="btnAlusta_Click"/>
+
+                <Button x:Name="btnValju"
+                        Content="Välju"
+                        Width="200"
+                        Height="45"
+                        Click="BtnValju_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="grdLitsentsEng" Visibility="Collapsed">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Text="MIT License"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="10"/>
+
+            <ScrollViewer Grid.Row="1"
+                          Margin="20"
+                          VerticalScrollBarVisibility="Auto">
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="14">
+                           <Run Text="MIT License&#x0a;&#x0a;"/>
+                           <Run Text="Copyright (c) 2026 Karl Martin Lepa&#x0a;&#x0a;"/>
+                    
+                           <Run Text="Permission is hereby granted, free of charge, to any person obtaining a copy&#x0a;"/>
+                           <Run Text="of this software and associated documentation files (the &quot;Software&quot;), to deal&#x0a;"/>
+                           <Run Text="in the Software without restriction, including without limitation the rights&#x0a;"/>
+                           <Run Text="to use, copy, modify, merge, publish, distribute, sublicense, and/or sell&#x0a;"/>
+                           <Run Text="copies of the Software, and to permit persons to whom the Software is&#x0a;"/>
+                           <Run Text="furnished to do so, subject to the following conditions:&#x0a;&#x0a;"/>
+                    
+                           <Run Text="The above copyright notice and this permission notice shall be included in all&#x0a;"/>
+                           <Run Text="copies or substantial portions of the Software.&#x0a;&#x0a;"/>
+                    
+                           <Run Text="THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR&#x0a;"/>
+                           <Run Text="IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,&#x0a;"/>
+                           <Run Text="FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE&#x0a;"/>
+                           <Run Text="AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER&#x0a;"/>
+                           <Run Text="LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,&#x0a;"/>
+                           <Run Text="OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE&#x0a;"/>
+                           <Run Text="SOFTWARE."/>
+                </TextBlock>
+
+            </ScrollViewer>
+
+            <Button Grid.Row="2"
+                    Content="Tagasi"
+                    Width="200"
+                    Height="40"
+                    HorizontalAlignment="Center"
+                    Margin="10"
+                    Click="BtnTagasiMain_Click"/>
+
+        </Grid>
+
+        <Grid x:Name="grdLitsentsEe" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Text="MIT-litsents"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="10"/>
+
+            <ScrollViewer Grid.Row="1"
+                          Margin="20"
+                          VerticalScrollBarVisibility="Auto">
+
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="14">
+                    
+                           <Run Text="Tegemist on MIT litsentsi mitteametliku tõlkega.&#x0a;"/>
+                           <Run Text="Õiguslikult kehtiv litsentsi tekst on leitav vajutades nupule License.&#x0a;&#x0a;"/>
+
+                           <Run Text="MIT Litsents&#x0a;&#x0a;"/>
+                           <Run Text="Autoriõigus (c) 2026 Karl Martin Lepa&#x0a;&#x0a;"/>
+
+                           <Run Text="Käesolevaga antakse luba, tasuta, igale isikule, kes on saanud selle tarkvara ja&#x0a;"/>
+                           <Run Text="sellega seotud dokumentatsioonifailide (&quot;Tarkvara&quot;) koopia, kasutada Tarkvara ilma&#x0a;"/>
+                           <Run Text="piiranguteta, sealhulgas piiranguteta õigust kasutada, kopeerida,&#x0a;"/>
+                           <Run Text="muuta, ühendada teiste projektidega, avaldada, levitada, alamlitsenseerida ja/või&#x0a;"/>
+                           <Run Text="müüa Tarkvara koopiaid ning lubada isikutel, kellele Tarkvara antakse, teha sama,&#x0a;"/>
+                           <Run Text="järgmistel tingimustel:&#x0a;&#x0a;"/>
+
+                           <Run Text="Ülaltoodud autoriõiguse teade ja käesolev teade tuleb lisada kõikidesse Tarkvara&#x0a;"/>
+                           <Run Text="koopiatesse või selle olulistesse osadesse.&#x0a;&#x0a;"/>
+
+                           <Run Text="TARKVARA ANTAKSE SELLISEL KUJUL NAGU TA ON, ILMA IGASUGUSE GARANTIITA, OLGU SEE&#x0a;"/>
+                           <Run Text="OTSESELT VÕI KAUDSELT VÄLJENDATUD, SEALHULGAS, KUID MITTE AINULT, KAUDSED GARANTIID&#x0a;"/>
+                           <Run Text="KAUBANDUSLIKKUSE, KINDLAKS OTSTARBEKS SOBIVUSE JA ÕIGUSTE MITTERIKKUMISE KOHTA.&#x0a;"/>
+                           <Run Text="AUTORID VÕI AUTORIÕIGUSE OMANIKUD EI VASTUTA ÜHEGI NÕUDE, KAHJU VÕI MUU VASTUTUSE&#x0a;"/>
+                           <Run Text="EEST, OLENEMATA SELLEST, KAS SEE TULENEB LEPINGUST, ÕIGUSRIKKUMISEST VÕI MUUST, MIS&#x0a;"/>
+                           <Run Text="TEKIB TARKVARAST, SELLE KASUTAMISEST VÕI MUUDEST TARKVARAGA SEOTUD TOIMINGUTEST."/>
+                    
+                </TextBlock>
+                
+            </ScrollViewer>
+
+            <Button Grid.Row="2"
+                    Content="Tagasi"
+                    Width="200"
+                    Height="40"
+                    HorizontalAlignment="Center"
+                    Margin="10"
+                    Click="BtnTagasiMain_Click"/>
+
+        </Grid>
+        
+        <Grid x:Name="grdKategooriad" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Title -->
+            <TextBlock Grid.Row="1"
+               Text="Vali tarkvara kategooria"
+               FontSize="24"
+               FontWeight="Bold"
+               HorizontalAlignment="Center"
+               Margin="0,20,0,20"/>
+
+            <StackPanel Grid.Row="2"
+                HorizontalAlignment="Center">
+
+                <Button Content="Veebibrauserid"
+                    Width="250"
+                    Height="50"
+                    Margin="0,0,0,10"
+                    Click="BtnBrauser_Click"/>
+
+                <Button Content="Kontoritarkvara"
+                Width="250"
+                Height="50"
+                Margin="0,0,0,10"
+                Click="BtnKontor_Click"/>
+
+                <Button Content="E-posti tarkvara"
+                Width="250"
+                Height="50"
+                Margin="0,0,0,10"
+                Click="BtnEmail_Click"/>
+
+                <Button Content="Kommunikatsioonitarkvara"
+                Width="250"
+                Height="50"
+                Margin="0,0,0,20"
+                Click="BtnKommunikatsioon_Click"/>
+
+                <Button Content="Tagasi"
+                    Width="150"
+                    Height="40"
+                    Click="BtnTagasiMain_Click"/>
+            </StackPanel>
+
+        </Grid>
+        <Grid x:Name="grdKriteeriumid" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+               Text="Vali funktsionaalsused"
+               FontSize="24"
+               FontWeight="Bold"
+               HorizontalAlignment="Center"
+               Margin="10"/>
+
+            <Grid Grid.Row="1" Margin="20">
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <ScrollViewer Grid.Column="0"
+                              VerticalScrollBarVisibility="Auto"
+                              Margin="0,0,20,0">
+                    <StackPanel x:Name="stkKriteeriumid" Margin="20"/>
+                </ScrollViewer>
+
+                <Border Grid.Column="1"
+                        BorderBrush="Gray"
+                        BorderThickness="1"
+                        Padding="15"
+                        CornerRadius="5">
+
+                    <StackPanel>
+                        <TextBlock Text="Funktsionaalsuse kirjeldus"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,10"/>
+
+                        <TextBlock x:Name="txtKriteeriumiKirjeldus"
+                                   Text="Vali funktsionaalsus, et näha selle kirjeldust"
+                                   TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            
+
+            <StackPanel Grid.Row="2"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                Margin="10">
+
+                <Button Content="Tagasi"
+                Width="150"
+                Height="40"
+                Margin="10"
+                Click="BtnTagasiKategooriad_Click"/>
+
+                <Button Content="Leia sobiv vabavara"
+                Width="200"
+                Height="40"
+                Margin="10"
+                Click="BtnLeiaTarkvara_Click"/>
+            </StackPanel>
+        </Grid>
+        
+        <Grid x:Name="grdSoovitus" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Text="Vabavarade hinnang"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="10"/>
+
+            <TextBlock Grid.Row="1"
+                       Text="Topeltkliki vabavarale, et näha hinnangu detaile"
+                       FontSize="14"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,10"/>
+
+            <ListBox x:Name="lstTulemused"
+                     Grid.Row="1"
+                     Margin="20"
+                     MouseDoubleClick="LstTulemused_MouseDoubleClick"/>
+
+            <Button Grid.Row="2"
+                    Content="Tagasi"
+                    Width="200"
+                    Height="40"
+                    HorizontalAlignment="Center"
+                    Margin="10"
+                    Click="BtnTagasiKriteeriumid_Click"/>
+        </Grid>
+        
+        <Grid x:Name="grdSoovitusTäpne" Visibility="Collapsed">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="txtTarkvaraNimi"
+                       Grid.Row="0"
+                       Text="Tarkvara nimi"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="10"/>
+
+            <TextBlock x:Name="txtSkoor"
+                       Grid.Row="1"
+                       Text="Sobivus: 0/0"
+                       FontSize="16"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,15"/>
+
+            <Grid Grid.Row="2"
+                  Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <GroupBox Header="Sobivad funktsionaalsused"
+                          Grid.Column="0"
+                          Margin="0,0,10,0">
+                    <ListBox x:Name="lstSobivadKriteeriumid"
+                             DisplayMemberPath="Nimi"/>
+                </GroupBox>
+
+                <GroupBox Header="Puuduvad funktsionaalsused"
+                          Grid.Column="1"
+                          Margin="0,0,10,0">
+                    <ListBox x:Name="lstPuuduvadKriteeriumid"
+                             DisplayMemberPath="Nimi"/>
+                </GroupBox>
+
+            </Grid>
+
+            <Button Grid.Row="3"
+                    Content="Tagasi"
+                    Width="220"
+                    Height="40"
+                    HorizontalAlignment="Center"
+                    Margin="10"
+                    Click="BtnTagasiSoovitused_Click"/>
+
+        </Grid>
+    </Grid>
+</Window>

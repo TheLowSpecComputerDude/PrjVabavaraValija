@@ -8,10 +8,9 @@ namespace PrjRiistvara
 {
     public interface IRiistvara
     {
-        double OSVersion { get;}
+        double OSVersioon { get;}
         public double RAM { get; }
-        public double FreeSpace { get; }
-        public string Drive { get; }
+        public double VabaKettamaht { get; }
 
     }
 }

@@ -9,6 +9,6 @@ namespace PrjHindamine
 {
     public interface IHindamine
     {
-        List<Skoorid> HindaTarkvarad(List<Tarkvaranõuded> sobivadTarkvarad, List<int> valitudKriteeriumid, ILoeAndmed andmed);
+        List<Skoorid> HindaTarkvarad(List<Tarkvaranõuded> sobivadTarkvarad, List<Kriteeriumid> valitudKriteeriumid, ILoeAndmed andmed);
     }
 }

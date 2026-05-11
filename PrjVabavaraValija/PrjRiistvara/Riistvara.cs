@@ -8,19 +8,16 @@ namespace PrjRiistvara
     public class Riistvara : IRiistvara
     {
         // Klassisisesed muutujad propertyle andmiseks
-        private double _osVersion; // OS versioon 7 - 11
+        private double _osVersioon; // OS versioon 7 - 11
 
         private double _ram; // Ram GB ühe komakohaga
 
-        private double _freeSpace; // Vaba ketta ruum 
-
-        private string _bestDrive = string.Empty; // Ketas millel on kõige rohkem ruumi
+        private double _vabaKettamaht; // Vaba ketta ruum 
 
         // Propertyd andmete välja saatmiseks
-        double IRiistvara.OSVersion { get => _osVersion; }
+        double IRiistvara.OSVersioon { get => _osVersioon; }
         double IRiistvara.RAM { get => _ram; }
-        double IRiistvara.FreeSpace { get => _freeSpace; }
-        string IRiistvara.Drive { get => _bestDrive; }
+        double IRiistvara.VabaKettamaht { get => _vabaKettamaht; }
 
         // Konstruktor
         public Riistvara()
@@ -37,11 +34,11 @@ namespace PrjRiistvara
 
             if (osVer.Major == 10)
             {
-                _osVersion = osVer.Build >= 22000 ? 11 : 10;
+                _osVersioon = osVer.Build >= 22000 ? 11 : 10;
             }
             else if (osVer.Major == 6)
             {
-                _osVersion = osVer.Minor switch
+                _osVersioon = osVer.Minor switch
                 {
                     1 => 7,
                     2 => 8,
@@ -51,7 +48,7 @@ namespace PrjRiistvara
             }
             else
             {
-                _osVersion = 0;
+                _osVersioon = 0;
             }
         }
 
@@ -73,16 +70,15 @@ namespace PrjRiistvara
 
         private void KettaInformatsioon()
         {
-            foreach (DriveInfo drive in DriveInfo.GetDrives())
+            foreach (DriveInfo ketas in DriveInfo.GetDrives())
             {
-                if(drive.IsReady && drive.DriveType == DriveType.Fixed)
+                if(ketas.IsReady && ketas.DriveType == DriveType.Fixed)
                 {
-                    double freeGB = drive.AvailableFreeSpace / 1024.00 / 1024.00 / 1024.00;
+                    double freeGB = ketas.AvailableFreeSpace / 1024.00 / 1024.00 / 1024.00;
 
-                    if(freeGB > _freeSpace)
+                    if(freeGB > _vabaKettamaht)
                     {
-                        _freeSpace = freeGB;
-                        _bestDrive = drive.Name;
+                        _vabaKettamaht = freeGB;
                     }
                 }
             }

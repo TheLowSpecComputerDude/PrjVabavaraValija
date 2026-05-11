@@ -10,6 +10,7 @@ namespace PrjAndmebaas
     {
         public int Id { get; set; }
         public string Nimi { get; set; } = string.Empty;
+        public string Kirjeldus { get; set; } = string.Empty;
         public int KategooriaId { get; set; }
 
     }

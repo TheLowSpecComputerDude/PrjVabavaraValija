@@ -4,7 +4,7 @@ namespace PrjHindamine
 {
     public class Hindamine : IHindamine
     {
-        List<Skoorid> IHindamine.HindaTarkvarad(List<Tarkvaranõuded> sobivadTarkvarad, List<int> valitudKriteeriumid, ILoeAndmed andmed)
+        List<Skoorid> IHindamine.HindaTarkvarad(List<Tarkvaranõuded> sobivadTarkvarad, List<Kriteeriumid> valitudKriteeriumid, ILoeAndmed andmed)
         {
             List<Skoorid> tulemused = new List<Skoorid>();
 
@@ -12,13 +12,19 @@ namespace PrjHindamine
             {
                 List<int> tarkvaraKriteeriumid = andmed.LoeTarkvaraKriteeriumid(tarkvara.Id);
 
-                int skoor = 0;
+                List<Kriteeriumid> sobivadKriteeriumid = new List<Kriteeriumid>();
 
-                foreach(int valitudId in valitudKriteeriumid)
+                List<Kriteeriumid> puuduvadKriteeriumid = new List<Kriteeriumid>();
+
+                foreach(Kriteeriumid valitud in valitudKriteeriumid)
                 {
-                    if(tarkvaraKriteeriumid.Contains(valitudId))
+                    if(tarkvaraKriteeriumid.Contains(valitud.Id))
                     {
-                        skoor++;
+                        sobivadKriteeriumid.Add(valitud);
+                    }
+                    else
+                    {
+                        puuduvadKriteeriumid.Add(valitud);
                     }
                 }
 
@@ -26,8 +32,10 @@ namespace PrjHindamine
                 {
                     TarkvaraId = tarkvara.Id,
                     Nimi = tarkvara.Nimi,
-                    Skoor = skoor,
-                    MaxSkoor = valitudKriteeriumid.Count
+                    Skoor = sobivadKriteeriumid.Count,
+                    MaxSkoor = valitudKriteeriumid.Count,
+                    SobivadKriteeriumid = sobivadKriteeriumid,
+                    PuuduvadKriteeriumid = puuduvadKriteeriumid
 
                 });
             }

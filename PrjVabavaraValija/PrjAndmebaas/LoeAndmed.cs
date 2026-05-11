@@ -9,19 +9,19 @@ namespace PrjAndmebaas
 {
     public class LoeAndmed : ILoeAndmed
     {
-        private readonly Andmebaas _database;
+        private readonly Andmebaas _andmed;
 
         public LoeAndmed()
         {
-            _database = new Andmebaas();
+            _andmed = new Andmebaas();
         }
 
-        List<Tarkvaranõuded> ILoeAndmed.LeiaSobivadTarkvarad(double osVersion, double ram, double freeSpace, int kategooriaId)
+        List<Tarkvaranõuded> ILoeAndmed.LeiaSobivadTarkvarad(double osVersioon, double ram, double vabaRuum, int kategooriaId)
         {
             List<Tarkvaranõuded> nõuded = new List<Tarkvaranõuded>();
 
-            using SqliteConnection connection = _database.GetConnection();
-            connection.Open();
+            using SqliteConnection ühendus = _andmed.LooÜhendus();
+            ühendus.Open();
 
             string query = @"
                            SELECT Id, Nimi, MinOS, MinRAM, MinKettamaht
@@ -32,11 +32,11 @@ namespace PrjAndmebaas
                            AND MinKettamaht <= @disk
                            ";
 
-            using SqliteCommand cmd = new SqliteCommand(query, connection);
+            using SqliteCommand cmd = new SqliteCommand(query, ühendus);
             cmd.Parameters.AddWithValue("@kategooriaId", kategooriaId);
-            cmd.Parameters.AddWithValue("@os", osVersion);
+            cmd.Parameters.AddWithValue("@os", osVersioon);
             cmd.Parameters.AddWithValue("@ram", ram);
-            cmd.Parameters.AddWithValue("@disk", freeSpace);
+            cmd.Parameters.AddWithValue("@disk", vabaRuum);
             using SqliteDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
@@ -59,16 +59,16 @@ namespace PrjAndmebaas
         {
             List<Kriteeriumid> kriteeriumid = new List<Kriteeriumid>();
 
-            using SqliteConnection connection = _database.GetConnection();
-            connection.Open();
+            using SqliteConnection ühendus = _andmed.LooÜhendus();
+            ühendus.Open();
 
             string query = @"
-                           SELECT Id, Nimi, KategooriaId
+                           SELECT Id, Nimi, Kirjeldus, KategooriaId
                            FROM Kriteerium
                            WHERE KategooriaId = @kategooriaId
                            ";
 
-            using SqliteCommand cmd = new SqliteCommand(query, connection);
+            using SqliteCommand cmd = new SqliteCommand(query, ühendus);
             cmd.Parameters.AddWithValue("@kategooriaId", kategooriaId);
 
             using SqliteDataReader reader = cmd.ExecuteReader();
@@ -79,7 +79,8 @@ namespace PrjAndmebaas
                 {
                     Id = reader.GetInt32(0),
                     Nimi = reader.GetString(1),
-                    KategooriaId = reader.GetInt32(2)
+                    Kirjeldus = reader.GetString(2),
+                    KategooriaId = reader.GetInt32(3)
                 };
 
                 kriteeriumid.Add(kriteerium);
@@ -92,8 +93,8 @@ namespace PrjAndmebaas
         {
             List<int> kriteeriumid = new List<int>();
 
-            using SqliteConnection connection = _database.GetConnection();
-            connection.Open();
+            using SqliteConnection ühendus = _andmed.LooÜhendus();
+            ühendus.Open();
 
             string query = @"
                            SELECT KriteeriumId
@@ -101,7 +102,7 @@ namespace PrjAndmebaas
                            WHERE TarkvaraId = @tarkvaraId
                            ";
 
-            using SqliteCommand cmd = new SqliteCommand(query, connection);
+            using SqliteCommand cmd = new SqliteCommand(query, ühendus);
             cmd.Parameters.AddWithValue("@tarkvaraId", tarkvaraId);
 
             using SqliteDataReader reader = cmd.ExecuteReader();

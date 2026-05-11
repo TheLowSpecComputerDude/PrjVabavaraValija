@@ -4,17 +4,17 @@ namespace PrjAndmebaas
 {
     internal class Andmebaas
     {
-        private readonly string _connectionString;
+        private readonly string _ühendusString;
 
         public Andmebaas()
         {
             string dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tarkvara.db");
-            _connectionString = $"Data Source={dbPath}";
+            _ühendusString = $"Data Source={dbPath}";
         }
 
-        public SqliteConnection GetConnection()
+        public SqliteConnection LooÜhendus()
         {
-            return new SqliteConnection(_connectionString);
+            return new SqliteConnection(_ühendusString);
         }
     }
 }
