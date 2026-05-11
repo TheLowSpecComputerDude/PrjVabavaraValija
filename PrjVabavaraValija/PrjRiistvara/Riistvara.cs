@@ -74,11 +74,11 @@ namespace PrjRiistvara
             {
                 if(ketas.IsReady && ketas.DriveType == DriveType.Fixed)
                 {
-                    double freeGB = ketas.AvailableFreeSpace / 1024.00 / 1024.00 / 1024.00;
+                    double vabaGB = ketas.AvailableFreeSpace / 1024.00 / 1024.00 / 1024.00;
 
-                    if(freeGB > _vabaKettamaht)
+                    if(vabaGB > _vabaKettamaht)
                     {
-                        _vabaKettamaht = freeGB;
+                        _vabaKettamaht = vabaGB;
                     }
                 }
             }
